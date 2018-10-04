@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "excercice2_tableau_login", "excercice2_tableau_login\excercice2_tableau_login.csproj", "{C2F723AF-C8AD-4F74-B061-B72EBD346B07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourde Hanoi", "Tourde Hanoi\Tourde Hanoi.csproj", "{E57A7549-E88A-476C-96FB-9684E6F9B4AC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2F723AF-C8AD-4F74-B061-B72EBD346B07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F723AF-C8AD-4F74-B061-B72EBD346B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F723AF-C8AD-4F74-B061-B72EBD346B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F723AF-C8AD-4F74-B061-B72EBD346B07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E57A7549-E88A-476C-96FB-9684E6F9B4AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E57A7549-E88A-476C-96FB-9684E6F9B4AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E57A7549-E88A-476C-96FB-9684E6F9B4AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E57A7549-E88A-476C-96FB-9684E6F9B4AC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
