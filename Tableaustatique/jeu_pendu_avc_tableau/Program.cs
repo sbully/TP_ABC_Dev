@@ -164,14 +164,6 @@ namespace enonce6_jeu_du_pendu
 
             do
             {
-                //affichage 1ere et derniere lettre du mot :
-                //Console.Clear();
-                //for (int i = 0; i < motsecret.Length; i++)
-                //{
-                //    Console.Write(" " + motsecret[i]);
-                //}
-                //Console.WriteLine("\n\n");
-
 
                 //demande d'une lettre, et verification 
                 do
@@ -339,58 +331,7 @@ namespace enonce6_jeu_du_pendu
 
 
         }
-        //static void tete()
-        //{
-        //    Console.WriteLine("\t\t\t" + (char)219 + (char)219 + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t" + (char)219 + (char)219 + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t" + (char)219 + (char)219 + (char)219 + (char)219 + (char)219);
-        //}
-        //static void corp()
-        //{
-        //    Console.WriteLine("\t\t\t  " + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //}
-        //static void corpbrasdroit()
-        //{
-        //    Console.WriteLine("\t\t\t  " + (char)219);
-        //    Console.WriteLine("\t\t      " + (char)219 + (char)219 + (char)219 + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t      " + (char)219 + "  " + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //}
-        //static void corpsetbras()
-        //{
-        //    Console.WriteLine("\t\t\t  " + (char)219);
-        //    Console.WriteLine("\t\t      " + (char)219 + (char)219 + (char)219 + (char)219 + (char)219 + (char)219 + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t      " + (char)219 + "  " + (char)219 + (char)219 + (char)219 + "  " + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //    Console.WriteLine("\t\t\t " + (char)219 + (char)219 + (char)219);
-        //}
-        //static void jambedroite()
-        //{
-        //    Console.WriteLine("\t\t\t " + (char)176);
-        //    Console.WriteLine("\t\t\t " + (char)176);
-        //    Console.WriteLine("\t\t\t " + (char)176);
-        //    Console.WriteLine("\t\t\t" + (char)219 + (char)219);
-        //}
-        //static void deuxjambes()
-        //{
-        //    Console.WriteLine("\t\t\t " + (char)176 + " " + (char)176);
-        //    Console.WriteLine("\t\t\t " + (char)176 + " " + (char)176);
-        //    Console.WriteLine("\t\t\t " + (char)176 + " " + (char)176);
-        //    Console.WriteLine("\t\t\t" + (char)219 + (char)219 + " " + (char)219 + (char)219);
-        //}
- 
-            
+         
         }
     }
 
