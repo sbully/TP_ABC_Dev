@@ -17,6 +17,12 @@ namespace enonce6_jeu_du_pendu
             bool testchar = false;
             bool lettretrouve = false;
             bool testcharint = false;
+            bool tete = false;
+            bool corp = false;
+            bool brasdroit = false;
+            bool brasgauche = false;
+            bool jambedroite = false;
+            bool jambegauche = false;
             int nbr;
             int testnbr;
             char test;
@@ -170,13 +176,23 @@ namespace enonce6_jeu_du_pendu
                 {
                     Console.WriteLine(".........TOUR DE L ADVERSAIRE...............\n");
                     j = 0;
-                    do
+                    do                             // AFFICHAGE PENDU
                     {
                         for (int i = 0; i < 21; i++)
                         {
-                            Console.Write(dessintab[j, i]);
+                            if (coup == 6)
+                            {
+                                Console.Write(dessintab[j, i]);
+
+                            }
+                            else
+                            {
+                                test_tete(j, i, dessintab);
+                            }
+
                         }
-                        if (j == 10)
+
+                        if (j == 10)            //affichage mot secret a droite du pendu a la ligne 11
                         {
                             for (int i = 0; i < motsecret.Length; i++)
                             {
@@ -187,14 +203,26 @@ namespace enonce6_jeu_du_pendu
                         j++;
 
                     } while (j < 19);
+
+
+
+
+
+
+
+
+
+
+
+
                     Console.WriteLine("Proposez une lettre (il vous reste {0}) erreur(s):", coup);
                     string stringtest = Console.ReadLine();
                     testchar = char.TryParse(stringtest, out test);
-                    testcharint = int.TryParse(stringtest,out nbr);
-                } while (!testchar||testcharint);
+                    testcharint = int.TryParse(stringtest, out nbr);
+                } while (!testchar || testcharint);
 
                 //Console.Clear();
-                
+
 
                 curseur = 0;
                 curseur2 = 0;
@@ -236,6 +264,7 @@ namespace enonce6_jeu_du_pendu
                 switch (coup)
                 {
                     case 5:
+                        tete = true;
                         dessintab[2, 14] = (char)186;
                         dessintab[3, 13] = (char)219;
                         dessintab[3, 14] = (char)219;
@@ -243,9 +272,10 @@ namespace enonce6_jeu_du_pendu
                         dessintab[4, 13] = (char)219;
                         dessintab[4, 14] = (char)219;
                         dessintab[4, 15] = (char)219;
+                        dessintab[5, 14] = (char)219;
                         break;
                     case 4:
-                        dessintab[5, 14] = (char)219;
+                        corp = true;
                         dessintab[6, 13] = (char)176;
                         dessintab[6, 14] = (char)176;
                         dessintab[6, 15] = (char)176;
@@ -260,12 +290,14 @@ namespace enonce6_jeu_du_pendu
                         dessintab[9, 15] = (char)176;
                         break;
                     case 3:
+                        brasdroit = true;
                         dessintab[6, 10] = (char)219;
                         dessintab[6, 11] = (char)219;
                         dessintab[6, 12] = (char)219;
                         dessintab[7, 10] = (char)219;
                         break;
                     case 2:
+                        brasgauche = true;
                         dessintab[6, 16] = (char)219;
                         dessintab[6, 17] = (char)219;
                         dessintab[6, 18] = (char)219;
@@ -273,6 +305,7 @@ namespace enonce6_jeu_du_pendu
 
                         break;
                     case 1:
+                        jambedroite = true;
                         dessintab[10, 13] = (char)219;
                         dessintab[11, 13] = (char)219;
                         dessintab[12, 13] = (char)178;
@@ -280,6 +313,7 @@ namespace enonce6_jeu_du_pendu
 
                         break;
                     case 0:
+                        jambegauche = true;
                         dessintab[10, 15] = (char)219;
                         dessintab[11, 15] = (char)219;
                         dessintab[12, 15] = (char)178;
@@ -298,11 +332,38 @@ namespace enonce6_jeu_du_pendu
             } while (coup > 0 && !comp);
             Console.Clear();
             j = 0;
-            do
+            //do
+            //{
+            //    for (int i = 0; i < 21; i++)
+            //    {
+            //        Console.Write(dessintab[j, i]);
+            //    }
+            //    Console.Write("\n");
+            //    j++;
+
+            //} while (j < 19);
+            do                             // AFFICHAGE PENDU
             {
                 for (int i = 0; i < 21; i++)
                 {
-                    Console.Write(dessintab[j, i]);
+                    if (coup == 6)
+                    {
+                        Console.Write(dessintab[j, i]);
+
+                    }
+                    else
+                    {
+                        test_tete(j, i, dessintab);
+                    }
+
+                }
+
+                if (j == 10)            //affichage mot secret a droite du pendu a la ligne 11
+                {
+                    for (int i = 0; i < motsecret.Length; i++)
+                    {
+                        Console.Write(" " + motsecret[i]);
+                    }
                 }
                 Console.Write("\n");
                 j++;
@@ -331,7 +392,57 @@ namespace enonce6_jeu_du_pendu
 
 
         }
-         
+
+
+        static void test_tete(int a, int b, char[,] tab)
+        {
+            Console.ResetColor();
+            if (((a == 3 && b == 13) || (a == 3 && b == 14) || (a == 3 && b == 15) || (a == 4 && b == 13) || (a == 4 && b == 14) || (a == 4 && b == 15) || (a == 5 && b == 14)))
+            {
+                Console.ForegroundColor = System.ConsoleColor.Red;
+                //Console.Write(tab[a, b]);
+            }
+            if (((a == 6 && b == 13) || (a == 6 && b == 14) || (a == 6 && b == 15) || (a == 7 && b == 13) || (a == 7 && b == 14) || (a == 7 && b == 15 || (a == 8 && b == 13) || (a == 8 && b == 14) || (a == 8 && b == 15) || (a == 9 && b == 13) || (a == 9 && b == 14) || (a == 9 && b == 15))))
+            {
+                Console.ForegroundColor = System.ConsoleColor.DarkGreen;
+            }
+            if ((a == 6 && b == 10) || (a == 6 && b == 11) || (a == 6 && b == 12) || (a == 7 && b == 10))
+            {
+                Console.ForegroundColor = System.ConsoleColor.Red;
+            }
+            if ((a == 6 && b == 16) || (a == 6 && b == 17) || (a == 6 && b == 18) || (a == 7 && b == 18))
+            {
+                Console.ForegroundColor = System.ConsoleColor.Red;
+            }
+            if ((a == 10 && b == 13) || (a == 11 && b == 13) )
+            {
+                Console.ForegroundColor = System.ConsoleColor.Red;
+            }
+            if ((a == 12 && b == 12) || (a == 12 && b == 13))
+            {
+                Console.ForegroundColor = System.ConsoleColor.DarkBlue;
+            }
+            if ((a == 10 && b == 15) || (a == 11 && b == 15))
+            {
+                Console.ForegroundColor = System.ConsoleColor.Red;
+            }
+            if ((a == 12 && b == 16) || (a == 12 && b == 15))
+            {
+                Console.ForegroundColor = System.ConsoleColor.DarkBlue;
+            }
+
+            Console.Write(tab[a, b]);
+
         }
+
     }
+
+
+
+
+
+
+}
+
+
 
