@@ -105,7 +105,7 @@ namespace enonce6_jeu_du_pendu
             do
             {
                 compteur = 0;
-                Console.WriteLine("entrer un mot " + (char)133 + " faire deviner (5 caractères mini):");
+                Console.WriteLine("entrer un mot " + (char)133 + " faire deviner (5 caract" + (char)138 + "re mini):");
                 secret = Console.ReadLine();
 
                 for (int i = 0; i < secret.Length; i++)

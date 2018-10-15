@@ -29,7 +29,7 @@ namespace excercice2_tableau_login
             login = Console.ReadLine();
             Console.WriteLine("entrez votre mot de passe svp :");
             motdepasse = Console.ReadLine();
-            for ( i = 0; i < 3 && !motDePasseEstValide; i++)
+            for ( i = 0; i < tabLogins.GetLength(0) && !motDePasseEstValide; i++)
             {
                 if (tabLogins[i, 0] == login && tabLogins[i, 1] == motdepasse)
                 {
