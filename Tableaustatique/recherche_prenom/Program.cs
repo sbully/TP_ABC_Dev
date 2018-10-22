@@ -54,6 +54,10 @@ namespace recherche_prenom
                     {
                         min = middle;
                         middle = min + ((max - min) / 2);
+                        if (max-min == 1)
+                        {
+                            middle++;
+                        }
                         Console.WriteLine("position du curseur :" + middle);
                     }
 
