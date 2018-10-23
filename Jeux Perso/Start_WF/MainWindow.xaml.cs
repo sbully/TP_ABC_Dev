@@ -51,10 +51,10 @@ namespace Start_WF
         bool fail = false;
 
         public static int Difficulty { get; set; } = 15;
-        public static int valeurscore { get; set; } = 10;
-        public static int init_timer_tick { get; set; } = 50;
-        public static string name { get; set; } = "";
-        public static FenetreDemarrage demarrage { get; set; }
+        public static int Valeurscore { get; set; } = 10;
+        public static int Init_timer_tick { get; set; } = 50;
+        public static string Playername { get; set; } = "";
+        public static FenetreDemarrage Demarrage { get; set; }
 
 
 
@@ -62,22 +62,22 @@ namespace Start_WF
         public MainWindow()
         {
             InitializeComponent();
-            explosion.SoundLocation = "D:\\GitHub rep\\TP_ABC_Dev\\Jeux Perso\\Start_WF\\images\\explosion.wav";
-            tir.SoundLocation = "D:\\GitHub rep\\TP_ABC_Dev\\Jeux Perso\\Start_WF\\images\\tir.wav";
-            applaudissement.SoundLocation = "D:\\GitHub rep\\TP_ABC_Dev\\Jeux Perso\\Start_WF\\images\\applaudissement.wav";
-            perdu.SoundLocation = "D:\\GitHub rep\\TP_ABC_Dev\\Jeux Perso\\Start_WF\\images\\Clairon.wav";
+            string path = Directory.GetCurrentDirectory();
+            explosion.SoundLocation = path + "\\explosion.wav";
+            tir.SoundLocation = path + "\\tir.wav";
+            applaudissement.SoundLocation = path +"\\applaudissement.wav";
+            perdu.SoundLocation = path + "\\Clairon.wav";
 
             obus.Visibility = Visibility.Hidden;
             invader.Visibility = Visibility.Hidden;
 
             timer = new DispatcherTimer();                              // initialisation timer invaders
-            timer.Interval = TimeSpan.FromMilliseconds(init_timer_tick);
+            timer.Interval = TimeSpan.FromMilliseconds(Init_timer_tick);
             timer.Tick += timer_Tick;
 
             timerboulet = new DispatcherTimer();                        // initialisation timer boulet
             timerboulet.Interval = TimeSpan.FromMilliseconds(10);
             timerboulet.Tick += timerboulet_Tick;
-
 
             timer.Start();
             timerboulet.Start();
@@ -116,9 +116,6 @@ namespace Start_WF
             {
                 i++;
             }
-
-
-
         }
 
         private void timerboulet_Tick(object sender, EventArgs e) // timer boulet de canon 
@@ -147,7 +144,7 @@ namespace Start_WF
                 if (retourdestruction)
                 {
                     explosion.Play();
-                    scorefinal = scorefinal + valeurscore;
+                    scorefinal = scorefinal + Valeurscore;
                     break;
                 }
             }
@@ -157,8 +154,7 @@ namespace Start_WF
                 perdu.Play();
                 timerboulet.Stop();
                 timer.Stop();
-                MessageBox.Show("Perdu " + name + " L'invasion a commencé!");
-
+                MessageBox.Show("Perdu " + Playername + " L'invasion a commencé!");
             }
 
 
@@ -167,7 +163,7 @@ namespace Start_WF
                 applaudissement.Play();
                 timerboulet.Stop();
                 timer.Stop();
-                MessageBox.Show("Bien joué " + name + " Vous avez gagné!!!!!!\nvotre score est de : "+scorefinal);
+                MessageBox.Show("Bien joué " + Playername + " Vous avez gagné!!!!!!\nvotre score est de : "+scorefinal);
 
             }
         }
@@ -346,7 +342,7 @@ namespace Start_WF
         {
             applaudissement.Stop();
             perdu.Stop();
-            demarrage.Show();
+            Demarrage.Show();
         }
     }
 }

@@ -33,10 +33,10 @@ namespace Start_WF
         private void EasyButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.Difficulty = 15;
-            MainWindow.demarrage = this;
-            MainWindow.valeurscore = 50;
-            MainWindow.init_timer_tick = 50;
-            MainWindow.name = NameBox.Text;
+            MainWindow.Demarrage = this;
+            MainWindow.Valeurscore = 50;
+            MainWindow.Init_timer_tick = 50;
+            MainWindow.Playername = NameBox.Text;
             var window = new MainWindow();
             window.Show();
             this.Hide();
@@ -46,11 +46,11 @@ namespace Start_WF
         private void MediumButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.Difficulty = 30;
-            MainWindow.demarrage = this;
-            MainWindow.valeurscore = 100;
+            MainWindow.Demarrage = this;
+            MainWindow.Valeurscore = 100;
             var window = new MainWindow();
-            MainWindow.init_timer_tick = 40;
-            MainWindow.name = NameBox.Text ;
+            MainWindow.Init_timer_tick = 40;
+            MainWindow.Playername = NameBox.Text ;
             window.Show();
             this.Hide();
         }
@@ -58,10 +58,10 @@ namespace Start_WF
         private void HardButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.Difficulty = 40;
-            MainWindow.demarrage = this;
-            MainWindow.valeurscore = 150;
-            MainWindow.init_timer_tick =30;
-            MainWindow.name = NameBox.Text;
+            MainWindow.Demarrage = this;
+            MainWindow.Valeurscore = 150;
+            MainWindow.Init_timer_tick =30;
+            MainWindow.Playername = NameBox.Text;
             var window = new MainWindow();
             window.Show();
             this.Hide();
