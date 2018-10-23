@@ -30,35 +30,39 @@ namespace Start_WF
             Application.Current.Shutdown();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void EasyButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.Difficulty = 15;
             MainWindow.demarrage = this;
-
+            MainWindow.valeurscore = 50;
+            MainWindow.init_timer_tick = 50;
+            MainWindow.name = NameBox.Text;
             var window = new MainWindow();
-            
             window.Show();
             this.Hide();
+
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void MediumButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.Difficulty = 30;
             MainWindow.demarrage = this;
-
+            MainWindow.valeurscore = 100;
             var window = new MainWindow();
-
+            MainWindow.init_timer_tick = 40;
+            MainWindow.name = NameBox.Text ;
             window.Show();
             this.Hide();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void HardButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.Difficulty = 40;
             MainWindow.demarrage = this;
-
+            MainWindow.valeurscore = 150;
+            MainWindow.init_timer_tick =30;
+            MainWindow.name = NameBox.Text;
             var window = new MainWindow();
-
             window.Show();
             this.Hide();
         }

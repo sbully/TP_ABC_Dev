@@ -22,40 +22,56 @@ namespace Start_WF
     /// </summary>
     public partial class MainWindow : Window
     {
+        //initialisation des variables
         List<Canon> bouletvisuel = new List<Canon>();
         List<Invader> listinvaders = new List<Invader>();
+
+        System.Media.SoundPlayer applaudissement = new System.Media.SoundPlayer();
+        System.Media.SoundPlayer explosion = new System.Media.SoundPlayer();
+        System.Media.SoundPlayer tir = new System.Media.SoundPlayer();
+        System.Media.SoundPlayer perdu = new System.Media.SoundPlayer();
+
         DispatcherTimer timer;
         DispatcherTimer timerboulet;
+
         Image img;
         Image inva;
-        bool difficulte = true;
+
+        int parcours = 0;
         int lvldifficulte;
-        int i = 0;
         int nbrInvader = 0;
+        int scorefinal = 0;
+        int i = 0;
         int j = 0;
+
         bool tireEnable = true;
         bool retourdestruction = false;
         bool partiestart = false;
-        int parcours = 0;
+        bool difficulte = true;
+        bool fail = false;
 
         public static int Difficulty { get; set; } = 15;
-
+        public static int valeurscore { get; set; } = 10;
+        public static int init_timer_tick { get; set; } = 50;
+        public static string name { get; set; } = "";
         public static FenetreDemarrage demarrage { get; set; }
+
+
+
 
         public MainWindow()
         {
             InitializeComponent();
-
-            //var fenetrestart = new FenetreDemarrage();
-            //fenetrestart.Show();
+            explosion.SoundLocation = "D:\\GitHub rep\\TP_ABC_Dev\\Jeux Perso\\Start_WF\\images\\explosion.wav";
+            tir.SoundLocation = "D:\\GitHub rep\\TP_ABC_Dev\\Jeux Perso\\Start_WF\\images\\tir.wav";
+            applaudissement.SoundLocation = "D:\\GitHub rep\\TP_ABC_Dev\\Jeux Perso\\Start_WF\\images\\applaudissement.wav";
+            perdu.SoundLocation = "D:\\GitHub rep\\TP_ABC_Dev\\Jeux Perso\\Start_WF\\images\\Clairon.wav";
 
             obus.Visibility = Visibility.Hidden;
             invader.Visibility = Visibility.Hidden;
 
-
-
             timer = new DispatcherTimer();                              // initialisation timer invaders
-            timer.Interval = TimeSpan.FromMilliseconds(50);
+            timer.Interval = TimeSpan.FromMilliseconds(init_timer_tick);
             timer.Tick += timer_Tick;
 
             timerboulet = new DispatcherTimer();                        // initialisation timer boulet
@@ -113,15 +129,15 @@ namespace Start_WF
             }
 
             //apres 20 tick je reactive la touche de tire
-            if (j==20)
+            if (j == 20)
             {
-                tireEnable = true; 
+                tireEnable = true;
             }
             j++;
 
             foreach (Canon Myboulet in bouletvisuel)
             {
-                
+
                 do
                 {
                     parcours++;
@@ -130,15 +146,29 @@ namespace Start_WF
                 } while (!retourdestruction && parcours < bouletvisuel.Count);
                 if (retourdestruction)
                 {
-                   break;
+                    explosion.Play();
+                    scorefinal = scorefinal + valeurscore;
+                    break;
                 }
-             }
-
-            if (listinvaders.Count==0 && partiestart)
+            }
+            fail = Verif_Defaite();
+            if (fail)
             {
-                MessageBox.Show("Vous avez gagné!!!!!!");
+                perdu.Play();
                 timerboulet.Stop();
                 timer.Stop();
+                MessageBox.Show("Perdu " + name + " L'invasion a commencé!");
+
+            }
+
+
+            if (listinvaders.Count == 0 && partiestart)
+            {
+                applaudissement.Play();
+                timerboulet.Stop();
+                timer.Stop();
+                MessageBox.Show("Bien joué " + name + " Vous avez gagné!!!!!!\nvotre score est de : "+scorefinal);
+
             }
         }
 
@@ -173,6 +203,7 @@ namespace Start_WF
             {                               //desactiver la touche apres chaque tire, reactive la touche dans le timerboulet apres 20 ticks
                 if (tireEnable == true)
                 {
+                    tir.Play();
                     Canon canon = new Canon();
                     canon.InitBoulet((tank.Margin.Left + 22.5), (tank.Margin.Right + 22.5));
                     img = canon.TireCanon();
@@ -181,10 +212,6 @@ namespace Start_WF
                     tireEnable = false;
                     j = 0;
                 }
-
-                
-
-
             }
         }
 
@@ -212,6 +239,23 @@ namespace Start_WF
             return destruction;
         }
 
+        public bool Verif_Defaite()
+        {
+            bool defaite = false;
+
+            foreach (Invader envahisseur in listinvaders)
+            {
+                if (envahisseur.invader.Margin.Bottom < tank.Margin.Bottom + 40)
+                {
+                    defaite = true;
+                    break;
+
+                }
+
+            }
+            return defaite;
+        }
+
 
 
 
@@ -228,7 +272,7 @@ namespace Start_WF
             {
                 _leftPlace = _left;
                 _rightPlace = _right;
-                
+
             }
 
 
@@ -300,6 +344,8 @@ namespace Start_WF
 
         private void Map_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            applaudissement.Stop();
+            perdu.Stop();
             demarrage.Show();
         }
     }

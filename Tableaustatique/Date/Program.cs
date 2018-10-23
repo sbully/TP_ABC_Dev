@@ -12,8 +12,9 @@ namespace Date
         {
             DateTime naissance = new DateTime();
             DateTime datenow = DateTime.Now;
+            int compare;
             int age;
-            
+
 
             bool testparse;
             TimeSpan interval;
@@ -25,11 +26,30 @@ namespace Date
 
             } while (!testparse);
 
-            interval = datenow.Subtract(naissance);
+            // avec timespan
+            //interval = datenow.Subtract(naissance);
 
-            age = interval.Days / 365;
+            //age = interval.Days / 365;
 
-            Console.WriteLine("vous avez : {0} ans", age);
+            //Console.WriteLine("vous avez : {0} ans", age);
+
+            // avec compareto
+
+            compare = (naissance.AddYears(18)).CompareTo(datenow);
+            if (compare == -1)
+            {
+                Console.WriteLine("tu es majeur");
+            }
+            if (compare == 0)
+            {
+                Console.WriteLine(" C'est ton anniversaire aujourd'hui! Bon anniversaire");
+            }
+            if (compare == 1)
+            {
+                Console.WriteLine("tu es mineur");
+            }
+
+
             Console.ReadKey();
 
         }

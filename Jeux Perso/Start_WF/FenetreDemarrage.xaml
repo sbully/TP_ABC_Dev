@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="Space Invaders V1.0" Height="445.3" Width="603.786">
     <Grid x:Name="grille" HorizontalAlignment="Left" Height="404" Margin="10,10,0,0" VerticalAlignment="Top" Width="584">
-        <Button Content="EASY" HorizontalAlignment="Left" Margin="80,225,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click"/>
-        <Button Content="MEDIUM" HorizontalAlignment="Left" Margin="240,225,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click_1"/>
-        <Button Content="HARD" HorizontalAlignment="Left" Margin="400,225,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click_2"/>
-        <Label x:Name="Titre" Content="Space Invaders V1.0" HorizontalAlignment="Left" Margin="80,116,0,0" VerticalAlignment="Top" Height="79" Width="410" FontSize="36" HorizontalContentAlignment="Center"/>
+        <Button x:Name="EasyBouton" Content="EASY" HorizontalAlignment="Left" Margin="80,225,0,0" VerticalAlignment="Top" Width="90" Click="EasyButton_Click"/>
+        <Button x:Name="MediumBouton" Content="MEDIUM" HorizontalAlignment="Left" Margin="240,225,0,0" VerticalAlignment="Top" Width="90" Click="MediumButton_Click"/>
+        <Button x:Name="HardBouton" Content="HARD" HorizontalAlignment="Left" Margin="400,225,0,0" VerticalAlignment="Top" Width="90" Click="HardButton_Click"/>
+        <Label x:Name="Titre" Content="Space Invaders V1.0" HorizontalAlignment="Left" Margin="80,25,0,0" VerticalAlignment="Top" Height="79" Width="410" FontSize="36" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="NameBox" HorizontalAlignment="Left" Height="29" Margin="240,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="Player1"/>
+        <Label x:Name="label_nom" Content="Nom du joueur :" HorizontalAlignment="Left" Margin="132,136,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

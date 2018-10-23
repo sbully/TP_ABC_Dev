@@ -8,7 +8,7 @@
         Title="MainWindow" Height="520" Width="700" ResizeMode="NoResize" Loaded="Map_Loaded" Closing="Map_Closing">
     <Grid x:Name="grille" HorizontalAlignment="Left" Height="475" Margin="10,10,0,0" VerticalAlignment="Top" Width="680" Background="Black">
         <Image x:Name="tank" Margin="0,415,630,10" Source="tank.png" Height="50" Width="50" Stretch="Fill"/>
-        <Image x:Name="invader" Margin="0,115,630,290" Source="inavders.png" Stretch="Fill" Width="50" Height="50"/>
+        <Image x:Name="invader" Margin="0,340,630,85" Source="inavders.png" Stretch="Fill" Width="50" Height="50"/>
         <Image x:Name="obus" Margin="23,385,652,50" Source="bullet.png" Stretch="Fill" Width="5" Height="20" />
 
     </Grid>
