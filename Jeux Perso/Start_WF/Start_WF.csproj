@@ -56,6 +56,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="alphabetique.cs" />
+    <Compile Include="Canon.cs" />
+    <Compile Include="Invader.cs" />
+    <Compile Include="JoueurScore.cs" />
+    <Compile Include="Sauvegarde.cs" />
+    <Compile Include="TableauScore.xaml.cs">
+      <DependentUpon>TableauScore.xaml</DependentUpon>
+    </Compile>
     <Page Include="FenetreDemarrage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -75,6 +83,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TableauScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

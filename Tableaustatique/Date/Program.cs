@@ -11,13 +11,13 @@ namespace Date
         static void Main(string[] args)
         {
             DateTime naissance = new DateTime();
-            DateTime datenow = DateTime.Now;
+            DateTime datenow = DateTime.Today;
             int compare;
             int age;
 
 
             bool testparse;
-            TimeSpan interval;
+            //TimeSpan interval;
 
             do
             {
@@ -38,7 +38,7 @@ namespace Date
             compare = (naissance.AddYears(18)).CompareTo(datenow);
             if (compare == -1)
             {
-                Console.WriteLine("tu es majeur");
+                Console.WriteLine("si tu es né le "+naissance.ToString("D")+" alors tu es majeur");
             }
             if (compare == 0)
             {
@@ -46,7 +46,7 @@ namespace Date
             }
             if (compare == 1)
             {
-                Console.WriteLine("tu es mineur");
+                Console.WriteLine("si tu es né le : "+naissance.ToString("D")+" tu es mineur");
             }
 
 

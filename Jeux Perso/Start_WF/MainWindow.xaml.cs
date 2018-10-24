@@ -26,10 +26,14 @@ namespace Start_WF
         List<Canon> bouletvisuel = new List<Canon>();
         List<Invader> listinvaders = new List<Invader>();
 
+
+
+
         System.Media.SoundPlayer applaudissement = new System.Media.SoundPlayer();
         System.Media.SoundPlayer explosion = new System.Media.SoundPlayer();
         System.Media.SoundPlayer tir = new System.Media.SoundPlayer();
         System.Media.SoundPlayer perdu = new System.Media.SoundPlayer();
+
 
         DispatcherTimer timer;
         DispatcherTimer timerboulet;
@@ -40,7 +44,7 @@ namespace Start_WF
         int parcours = 0;
         int lvldifficulte;
         int nbrInvader = 0;
-        int scorefinal = 0;
+
         int i = 0;
         int j = 0;
 
@@ -50,11 +54,18 @@ namespace Start_WF
         bool difficulte = true;
         bool fail = false;
 
+        public static int scorefinal = 0;
+        public static string NiveauDiff { get; set; } = "";
         public static int Difficulty { get; set; } = 15;
         public static int Valeurscore { get; set; } = 10;
         public static int Init_timer_tick { get; set; } = 50;
         public static string Playername { get; set; } = "";
         public static FenetreDemarrage Demarrage { get; set; }
+        public static List<JoueurScore> ListScore = new List<JoueurScore>();
+        //public static string NomFichier = "Score.Txt";
+
+        //FileStream FileSt = new FileStream(NomFichier, FileMode.Open);
+        //StreamReader StreamRead = new StreamReader(NomFichier);
 
 
 
@@ -65,7 +76,7 @@ namespace Start_WF
             string path = Directory.GetCurrentDirectory();
             explosion.SoundLocation = path + "\\explosion.wav";
             tir.SoundLocation = path + "\\tir.wav";
-            applaudissement.SoundLocation = path +"\\applaudissement.wav";
+            applaudissement.SoundLocation = path + "\\applaudissement.wav";
             perdu.SoundLocation = path + "\\Clairon.wav";
 
             obus.Visibility = Visibility.Hidden;
@@ -163,7 +174,7 @@ namespace Start_WF
                 applaudissement.Play();
                 timerboulet.Stop();
                 timer.Stop();
-                MessageBox.Show("Bien joué " + Playername + " Vous avez gagné!!!!!!\nvotre score est de : "+scorefinal);
+                MessageBox.Show("Bien joué " + Playername + " Vous avez gagné!!!!!!\nvotre score est de : " + scorefinal);
 
             }
         }
@@ -174,6 +185,7 @@ namespace Start_WF
             var window = Window.GetWindow(this);
             window.KeyDown += tank_KeyDown;
             lvldifficulte = Difficulty;
+            scorefinal = 0;
         }
 
         private void tank_KeyDown(object sender, KeyEventArgs e)
@@ -230,8 +242,6 @@ namespace Start_WF
                     }
                 }
             }
-
-
             return destruction;
         }
 
@@ -252,94 +262,11 @@ namespace Start_WF
             return defaite;
         }
 
-
-
-
-        public class Canon //classe Canon
-        {
-            double _leftPlace;
-            double _rightPlace;
-            public Image boulet = new Image();
-
-
-
-
-            public void InitBoulet(double _left, double _right) //récuperation des coordonné du boulet a afficher
-            {
-                _leftPlace = _left;
-                _rightPlace = _right;
-
-            }
-
-
-            public Image TireCanon()
-            {
-                byte[] imageInfo = File.ReadAllBytes("bullet.PNG");
-                BitmapImage image_boulet;
-                using (MemoryStream imageStream = new MemoryStream(imageInfo))
-                {
-
-                    image_boulet = new BitmapImage();
-                    image_boulet.BeginInit();
-                    image_boulet.CacheOption = BitmapCacheOption.OnLoad;
-                    image_boulet.StreamSource = imageStream;
-                    image_boulet.EndInit();
-                }
-
-                this.boulet.Source = image_boulet;
-                boulet.Margin = new Thickness(_leftPlace, 385, _rightPlace, 50);
-                boulet.Name = "boulet";
-                boulet.Width = 5;
-                boulet.Height = 20;
-                boulet.Visibility = Visibility.Visible;
-                boulet.Stretch = Stretch.Fill;
-                boulet.IsEnabled = true;
-                return boulet;
-
-            }
-
-
-        }
-
-
-        public class Invader        // classe Invader
-        {
-
-            public Image invader = new Image();
-
-            //Margin="0,0,630,405" Source="inavders.png" Stretch="Fill" Width="50" Height="50"
-
-
-            public Image Pop_Invader()
-            {
-                byte[] imageInfo = File.ReadAllBytes("inavders.PNG");
-                BitmapImage image_invaders;
-                using (MemoryStream imageStream = new MemoryStream(imageInfo))
-                {
-                    image_invaders = new BitmapImage();
-                    image_invaders.BeginInit();
-                    image_invaders.CacheOption = BitmapCacheOption.OnLoad;
-                    image_invaders.StreamSource = imageStream;
-                    image_invaders.EndInit();
-                }
-
-                this.invader.Source = image_invaders;
-                invader.Margin = new Thickness(0, 0, 630, 405);
-                invader.Name = "Invader";
-                invader.Width = 50;
-                invader.Height = 50;
-                invader.Visibility = Visibility.Visible;
-                invader.Stretch = Stretch.Fill;
-                invader.IsEnabled = true;
-                return invader;
-
-            }
-
-
-        }
-
         private void Map_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            JoueurScore classement = new JoueurScore(Playername, scorefinal, NiveauDiff);
+            ListScore.Add(classement);
+            Sauvegarde.WriteSave();
             applaudissement.Stop();
             perdu.Stop();
             Demarrage.Show();

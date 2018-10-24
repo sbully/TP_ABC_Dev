@@ -65,41 +65,6 @@ namespace recherche_prenom
             } while (!find && !exit);
 
 
-            //do
-            //{
-
-            //    compare = prenom.CompareTo(tableau[middle]);
-            //    Console.WriteLine("min = " + min + " max = " + max);
-            //    if (max - min == 1)
-            //    {
-            //        exit = true;
-            //    }
-
-            //    if (compare == 0)
-            //    {
-            //        find = true;
-            //    }
-            //    else
-            //    {
-            //        if (compare < 0) // prénom dans la 1ere parti du tableau
-            //        {
-            //            max = middle;
-            //            middle = max - ((max - min) / 2) - 1;
-            //            Console.WriteLine("position du curseur :" + middle);
-            //        }
-            //        else            //prénom dans la 2eme partie du tableau
-            //        {
-            //            min = middle;
-            //            middle = min + ((max - min) / 2);
-            //            if (max - min == 1)
-            //            {
-            //                middle++;
-            //            }
-            //            Console.WriteLine("position du curseur :" + middle);
-            //        }
-
-            //    }
-            //} while (!find && !exit);
             if (find)
             {
                 Console.WriteLine("le prénom " + prenom + " se trouve a l index :" + middle);

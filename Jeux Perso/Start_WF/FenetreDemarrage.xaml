@@ -13,5 +13,6 @@
         <Label x:Name="Titre" Content="Space Invaders V1.0" HorizontalAlignment="Left" Margin="80,25,0,0" VerticalAlignment="Top" Height="79" Width="410" FontSize="36" HorizontalContentAlignment="Center"/>
         <TextBox x:Name="NameBox" HorizontalAlignment="Left" Height="29" Margin="240,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Text="Player1"/>
         <Label x:Name="label_nom" Content="Nom du joueur :" HorizontalAlignment="Left" Margin="132,136,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Score" Content="Score" HorizontalAlignment="Left" Margin="240,327,0,0" VerticalAlignment="Top" Width="90" Click="Score_Click"/>
     </Grid>
 </Window>

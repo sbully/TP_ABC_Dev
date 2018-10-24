@@ -23,6 +23,7 @@ namespace Start_WF
         {
             
             InitializeComponent();
+            Sauvegarde.Read_Save();
         }
 
         private void Quitter_Click(object sender, RoutedEventArgs e)
@@ -37,6 +38,7 @@ namespace Start_WF
             MainWindow.Valeurscore = 50;
             MainWindow.Init_timer_tick = 50;
             MainWindow.Playername = NameBox.Text;
+            MainWindow.NiveauDiff = "Facile";
             var window = new MainWindow();
             window.Show();
             this.Hide();
@@ -48,9 +50,10 @@ namespace Start_WF
             MainWindow.Difficulty = 30;
             MainWindow.Demarrage = this;
             MainWindow.Valeurscore = 100;
-            var window = new MainWindow();
             MainWindow.Init_timer_tick = 40;
-            MainWindow.Playername = NameBox.Text ;
+            MainWindow.Playername = NameBox.Text;
+            MainWindow.NiveauDiff = "Moyen";
+            var window = new MainWindow();
             window.Show();
             this.Hide();
         }
@@ -62,9 +65,16 @@ namespace Start_WF
             MainWindow.Valeurscore = 150;
             MainWindow.Init_timer_tick =30;
             MainWindow.Playername = NameBox.Text;
+            MainWindow.NiveauDiff = "Difficile";
             var window = new MainWindow();
             window.Show();
             this.Hide();
+        }
+
+        private void Score_Click(object sender, RoutedEventArgs e)
+        {
+            var windowsscore = new TableauScore();
+            windowsscore.Show();
         }
     }
 }
