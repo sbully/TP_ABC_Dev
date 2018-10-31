@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace VoitureTri
 {
 
-    public class Voiture
+    public class Voiture : IComparable
     {
         private string numeroDeSerie;
         private string modele;
@@ -60,5 +60,9 @@ namespace VoitureTri
             set { miseEnCircu = value; }
         }
 
+        int IComparable.CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
