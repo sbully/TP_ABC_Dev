@@ -1,0 +1,14 @@
+﻿<Window x:Name="Game_Car1" x:Class="Game_Voiture.Game_Car"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game_Voiture"
+        mc:Ignorable="d"
+        Title="Game Car V1.0" Height="800" Width="600" Closed="Game_Car1_Closed" ResizeMode="NoResize">
+    <Grid x:Name="Grille" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <!--<Image x:Name="RouteImage" HorizontalAlignment="Left" Height="750" Margin="10,12,0,0" VerticalAlignment="Top" Width="572"/>-->
+        <Image x:Name="VoitureGame" HorizontalAlignment="Left" Height="189" Margin="225,572,0,0" VerticalAlignment="Top" Width="135" Loaded="VoitureGame_Loaded" KeyDown="VoitureGame_KeyDown"/>
+
+    </Grid>
+</Window>

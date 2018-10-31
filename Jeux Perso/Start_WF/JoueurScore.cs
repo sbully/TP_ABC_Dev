@@ -56,5 +56,7 @@ namespace Start_WF
             get { return DiffLvl; }
             set { DiffLvl = value; }
         }
+
+        //public string Test { get; private set; }
     }
 }
