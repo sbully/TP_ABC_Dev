@@ -25,16 +25,12 @@ namespace Start_WF
         //initialisation des variables
         List<Canon> bouletvisuel = new List<Canon>();
         List<Invader> listinvaders = new List<Invader>();
-
-
-
-
+        
         System.Media.SoundPlayer applaudissement = new System.Media.SoundPlayer();
         System.Media.SoundPlayer explosion = new System.Media.SoundPlayer();
         System.Media.SoundPlayer tir = new System.Media.SoundPlayer();
         System.Media.SoundPlayer perdu = new System.Media.SoundPlayer();
-
-
+        
         DispatcherTimer timer;
         DispatcherTimer timerboulet;
 
@@ -62,17 +58,12 @@ namespace Start_WF
         public static string Playername { get; set; } = "";
         public static FenetreDemarrage Demarrage { get; set; }
         public static List<JoueurScore> ListScore = new List<JoueurScore>();
-        //public static string NomFichier = "Score.Txt";
-
-        //FileStream FileSt = new FileStream(NomFichier, FileMode.Open);
-        //StreamReader StreamRead = new StreamReader(NomFichier);
-
-
-
+        
 
         public MainWindow()
         {
             InitializeComponent();
+            
             string path = Directory.GetCurrentDirectory();
             explosion.SoundLocation = path + "\\explosion.wav";
             tir.SoundLocation = path + "\\tir.wav";
@@ -266,6 +257,8 @@ namespace Start_WF
         {
             JoueurScore classement = new JoueurScore(Playername, scorefinal, NiveauDiff);
             ListScore.Add(classement);
+            //List<object> test;
+            //test = ListScore.ConvertAll(new Converter<JoueurScore, object>() );
             Sauvegarde.WriteSave();
             applaudissement.Stop();
             perdu.Stop();

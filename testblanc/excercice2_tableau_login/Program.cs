@@ -12,6 +12,7 @@ namespace excercice2_tableau_login
         {
 
             string[,] tabLogins = new string[3, 2];
+            
             string login;
             string motdepasse;
             int i;

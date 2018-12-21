@@ -55,11 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FenetreScore.xaml.cs">
+      <DependentUpon>FenetreScore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Game Car.xaml.cs">
       <DependentUpon>Game Car.xaml</DependentUpon>
     </Compile>
     <Compile Include="Route.cs" />
+    <Compile Include="SaveGame.cs" />
+    <Compile Include="ScoreJoueur.cs" />
     <Compile Include="Voiture.cs" />
+    <Page Include="FenetreScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Game Car.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

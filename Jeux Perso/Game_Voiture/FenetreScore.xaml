@@ -1,0 +1,15 @@
+﻿<Window x:Name="FenetreScore1" x:Class="Game_Voiture.FenetreScore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game_Voiture"
+        mc:Ignorable="d"
+        Title="Fenetre Score" Height="300" Width="300" Loaded="FenetreScore1_Loaded" ResizeMode="NoResize" Closing="FenetreScore1_Closing">
+    <Grid>
+        <Label x:Name="LabelVoitEvit" Content="Label" Margin="61,59,81,0" VerticalAlignment="Top" Height="30"/>
+        <Label x:Name="LabelDist" Content="Label" HorizontalAlignment="Left" Height="30" Margin="61,102,0,0" VerticalAlignment="Top" Width="176"/>
+        <Button x:Name="ButtonExit" Content="Exit" HorizontalAlignment="Left" Margin="71,164,0,0" VerticalAlignment="Top" Width="150" Height="45" Click="ButtonExit_Click"/>
+
+    </Grid>
+</Window>

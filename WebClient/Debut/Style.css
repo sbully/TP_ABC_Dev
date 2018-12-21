@@ -1,0 +1,297 @@
+body{
+	font-family: 'source code pro', Chopin;
+    margin : 0px 0px 0px 0px;
+    padding: 0px;
+    background-image: url(fondvert.gif);
+    width: 1480px;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+nav{
+	width: 100%;
+    float: left;
+    top: auto;
+	background-color:#05b705;     
+}
+nav >  ul{
+    width : 1000px;
+	margin: 0px;
+	padding: :0px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    }
+nav > ul::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+nav >ul >li{
+	float: left;
+	position: relative;
+    width: auto;
+}
+nav > ul > li>a{
+    padding: 0px 10px ;
+    text-align: left;
+}
+nav li {
+	list-style-type: none;    
+}
+.submenu{
+	display: none;
+}
+nav a{
+    display: inline-block;
+    text-decoration:none;
+    border-color: yellow;
+    border-style: solid;
+    border-width: 1px;
+    color:white;
+    background-color: green;
+}
+nav li a:hover {
+    background-color: #69c310;
+    color: #07f205;
+}
+.presentation:hover .submenu{
+    display:inline-block ;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+.submenu li a{
+    padding: 0px 5px;
+    width:170px ;
+}
+.subriv {
+    display: none;
+}
+.riv:hover .subriv{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+.subriv li a{
+    padding: 0px 5px;
+    width: 165px;
+}
+.submethode {
+    display: none;
+}
+.submethode li a{
+    padding: 0px 5px;
+    width: 180px;
+}
+.peche:hover .submethode{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: :1000;
+}
+.subappat {
+    display: none;
+}
+.subappat li a{
+    padding: 0px 5px;
+    width: 165px;
+}
+.appat:hover .subappat{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    padding: 0px;
+    z-index: 1000;
+}
+.submouche{
+    display: none;
+}
+.submethode li:hover .submouche{
+    display:inline-block;
+    width: 250px;
+    position:absolute;
+    top:0%;
+    left: 180px;
+    padding: 0px;
+}
+.subleurre{
+    display: none;
+}
+.submethode li:hover .subleurre{
+    display: inline-block;
+    position: absolute;
+    width: 250px;
+    top: 34%;
+    left: 180px;
+    padding: 0px;
+}
+.sublac {
+    display: none;
+}
+.sublac li a{
+    padding: 0px 5px;
+    width:172px;
+}
+.methodelac:hover .sublac{
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    padding: 0px;
+    z-index: 1000;
+}
+.art{
+    float: left;
+    margin: 0px 10px 10px 0px;    
+}
+.header{
+    margin-left: 10px;
+    height: 300px;
+    width: 1450px;
+    background-color: green;
+}
+.header:after{
+    content: "";
+    display: table;
+    clear: both;    
+}
+.colone{
+  float: left;
+  width: 33%;
+  padding: 0px;
+  margin : 0px;
+  height: 300px;
+}
+.colone2{
+    float: left;
+    width: 66%;
+    padding: 0px;
+    margin : 0px;
+    height: 300px;
+}
+*{
+    box-sizing: border-box;
+}
+.menuleft{
+    float: left;
+    width: 100%;
+    height:auto;
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+}
+.article{
+    float: left;
+    width: 60%;
+    padding: 0px 0px 5px 5px;
+    margin:0%;
+    height: auto; 
+    background-color: #CBD888;
+}
+.menuright{
+    float: left;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+}
+.menuleft a{
+    padding: 10px 50px;
+    height: 60px;
+    display: block;
+    text-decoration:none;
+    color:red;
+    background-color: black;
+    width: 100%;
+    font-size: 30px;   
+    text-decoration: none;
+    text-align:left;
+}
+.menuleft li{
+    list-style-type: none;
+}
+.menuleft >ul >li {
+    float: left;
+	position: relative;
+    width: 290px; 
+}
+.menuleft ul{
+    margin-top: 2px;
+    top :0px;
+    padding: 0px; 
+}
+.TitreArticle{
+    padding 0px;
+    text-align:left ;
+    font-size: 36px;
+    font-weight: bold;
+}
+.menuright a{
+    padding : 0px 50px; 
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    width: 100%;
+    text-align: left;  
+}
+.menuright li{
+    list-style-type: none;
+}
+.piedpage{
+    float: left;
+    position: relative;
+    padding: 0px 0px 20px 0px;
+    margin: 0px 10px 0px 10px;
+    width: 1450px;
+    height: auto; 
+    background-color: green;
+}
+.corpstable{
+position:relative;
+    border-spacing:0px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 1450px;
+    height: auto;
+}
+.colonneleft{
+    vertical-align: text-bottom;
+    width: 20%;
+    margin:0px;
+    background-color: #2D2F22;    
+}
+.colonneright{
+    vertical-align:top;
+    margin: 0px;
+    width: 20%;
+    background-color: #CBD888;
+}
+.colonnemiddle{
+    padding: 0px 0px 0px 10px;
+    width: auto;
+    background-color: #CBD888;
+    height: auto;
+}
+.copyright{
+    color: blue;
+    text-align: center;
+}
+.copyright2{
+    color: white;
+    text-align: center;
+}
+.doublepoint{
+    color :blue;
+}

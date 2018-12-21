@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Start_WF
 {
     [Serializable]
-    public class JoueurScore : IComparable   // classe Invader
+    public class JoueurScore : IComparable   // classe JoueurScore
     {
 
         public int CompareTo(Object other)
@@ -56,7 +56,11 @@ namespace Start_WF
             get { return DiffLvl; }
             set { DiffLvl = value; }
         }
+        //public static object ConverteToObject(JoueurScore J)
+        //{
+        //    object retour = new object();
+        //    return retour (((string)J.NomJoueur), ((int)J.ScoreJoueur),((string)J.DiffLvl) );
+        //}
 
-        //public string Test { get; private set; }
     }
 }

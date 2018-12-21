@@ -12,10 +12,11 @@ namespace Start_WF
 {
     class Sauvegarde
     {
-        
 
-        public static void WriteSave() // ecriture de la liste typé dans un fichier
-        {
+
+        // public static void WriteSave(List<object> ex) // ecriture de la liste typé dans un fichier
+        public static void WriteSave()
+        {                       
             List<JoueurScore> Save = MainWindow.ListScore ;
             Stream streamW = new FileStream("Save_Game.bin", FileMode.Create, FileAccess.Write, FileShare.None);
             IFormatter formatter = new BinaryFormatter();

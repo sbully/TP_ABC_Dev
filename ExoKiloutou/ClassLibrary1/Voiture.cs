@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace VoitureTri
 {
 
-    public class Voiture : IComparable
+    public class Voiture /*: IComparable*/
     {
         private string numeroDeSerie;
         private string modele;
@@ -27,17 +27,15 @@ namespace VoitureTri
             modele = _modele;
             marque = _marque;
             miseEnCircu = _miseEnCircu;
-
         }
+
         public Voiture(Voiture oldCar, DateTime _miseEnCirculation)
         {
             numeroDeSerie = oldCar.numeroDeSerie;
             modele = oldCar.modele;
             marque = oldCar.marque;
             miseEnCircu = _miseEnCirculation;
-
         }
-
 
         public string SerieVoiture
         {
@@ -60,9 +58,10 @@ namespace VoitureTri
             set { miseEnCircu = value; }
         }
 
-        int IComparable.CompareTo(object obj)
-        {
-            throw new NotImplementedException();
-        }
+
+        //public int CompareTo(object obj)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

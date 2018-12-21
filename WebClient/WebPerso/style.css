@@ -1,0 +1,197 @@
+body{
+    background-image: url(ligne.jpg);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    float: left;
+    height: 100%;
+    display: grid;
+}
+header{
+    border: 2px solid white;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 68rem;
+    margin-top: 60px;   
+    color: #fff;
+    background-color: blue;
+    opacity: 0.8;
+    padding: 2rem;
+    font-size: 3rem;
+    border-radius: 2rem;
+}
+.btn {
+    width: 100%;
+    padding-top: 3rem;
+    padding-left: 0px;
+
+}
+
+.btn button a{
+    color: #ffffff;
+    text-decoration: none;
+}
+button{
+    position: relative; 
+    display: inline-block;
+    margin-right: 4rem;
+    background-color: transparent;
+    opacity: 1;
+    color: #fff;
+    width: 15rem;
+    height: 3rem;
+    border: .1rem solid grey;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    transition: 1.4s;
+    overflow: hidden;
+}
+button:last-child{
+    margin-right: 0;
+}
+button::after{
+    content: "";
+	display: block;
+	clear: both;
+}
+
+button:focus{
+    outline: none;
+}
+button:after{
+    content: '';
+    opacity: 0;
+    filter: blur(30px);
+}
+
+button:hover{
+    background:blue;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+button:hover:before{
+    opacity: 0;
+}
+
+button:hover:after{
+    opacity: 1;
+}
+.corp{
+    padding-top: 2rem;
+        margin-left: auto;
+    margin-right: auto;
+    
+}
+.piedpage{
+    border: 2px solid white;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 68rem;
+    margin-top: 6rem;   
+    color: #fff;
+    background-color: blue;
+    opacity: 0.8;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+}
+.buttoncircle{
+    width: 60px;
+    height: 60px;
+    font-size: 0.8rem;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 80px;
+    transition-property: transform;
+    transition: 1.5s;
+    overflow: hidden;   
+    color: white;
+}
+.incline{
+    transform: rotate(-45deg);
+}
+.buttoncircle a{   
+    color: white;
+}
+.buttoncircle:hover{
+    transform: rotate(360deg);
+    -webkit-transform:rotate(360deg);
+    font-weight: bold;
+}
+.buttoncircle:hover a{
+    color: red;
+    font-weight: bold;
+}
+/*.buttoncircle:not(:hover){
+    transition: 0.2s;   
+}*/
+.imagereseau{
+    width: 40px;
+}
+
+/*--------style tab------------------*/
+.containerTab{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70rem;
+}
+.tab {
+    padding-top: 2rem;
+  width: 100%;
+  overflow: hidden;
+  background-color: transparent;
+}
+/* Style buttons interieur tab */
+.tab button {
+    background-color: transparent;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin: 0;
+}
+
+/* Change color hover */
+.tab button:hover {
+    background-color: blue;
+}
+
+
+.tab button.active {
+    font-weight: bold;
+    background-color: blue;
+}
+
+.tabcontent {
+    background-color: aqua;
+    display: none;
+    width: 100%;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+}
+img[Title="gar"]{
+    box-shadow: 8px 8px 12px #000;
+    margin-right: 15px; 
+    margin-bottom: 10px;
+    float: left;
+    height: 100%;
+    transition-property: transform;
+    overflow: hidden;
+    transition: 1.5s;
+}
+img[Title="gar"]:hover{
+
+    transform: rotate(90deg) scale(1.5);
+   /* transform: scale(1.5);*/
+
+}
+/* -------------------------------------------------------------*/

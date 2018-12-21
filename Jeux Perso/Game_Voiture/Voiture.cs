@@ -19,9 +19,7 @@ namespace Game_Voiture
     public class Voiture
     {
         public Image Car = new Image();
-        static BitmapImage bitmapImage;
-
-        
+        static BitmapImage bitmapImage;        
 
         public static BitmapImage Init_couleur(string _couleur , Rotation _rotation = Rotation.Rotate0)
         {
@@ -59,9 +57,11 @@ namespace Game_Voiture
             }
             this.Car.Source = bitmapImage;
             left = position.Next(40,400);
+            Car.Margin = new Thickness(left, -189, (590 - left - 82), 761);
             Car.Height = 189;
-            Car.Width = 135;
-            Car.Margin = new Thickness(left, -189, (572 - left - 135), 761);
+            Car.Width = 82;
+            Car.Stretch = Stretch.Fill;
+            
             Car.Name = "Car_down";
 
             return Car;

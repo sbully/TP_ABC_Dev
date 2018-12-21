@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Site Perso</title>
+    <meta charset ="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<div class="header" align="center">
+<div>
+            <header><strong>Bienvenue sur mon CV en ligne</strong></header>
+                <nav class="btn">
+                    <button type="button"><a href="#">Présentation</a></button>
+                    <button type="button"><a href="#">Projet</a></button>
+                    <button type="button"><a href="#">CV</a></button> 
+                    <button type="button"><a href="#">Contact</a></button>          
+                </nav>
+</div>
+    
+</div>
+    <div class="containerTab">
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'presentation')" id="defaultOpen">Présentation</button>
+  <button class="tablinks" onclick="openTab(event, 'parcours')">Parcours</button>
+  <button class="tablinks" onclick="openTab(event, 'activity')">Activité</button>
+</div>
+
+<div id="presentation" class="tabcontent">
+  <h3>Présentation</h3>
+  <p align="justify"><img src="artwow4.png" title="gar">Loin, très loin, au delà des monts Mots, à mille lieues des pays Voyellie et Consonnia, demeurent les Bolos Bolos. Ils vivent en retrait, à Bourg-en-Lettres, sur les côtes de la Sémantique, un vaste océan de langues. Un petit ruisseau, du nom de Larousse, coule en leur lieu et les approvisionne en règlalades nécessaires en tout genre; un pays paradisiagmatique, dans lequel des pans entiers de phrases prémâchées vous volent litéralement tout cuit dans la bouche. Pas même la toute puissante Ponctuation ne régit les Bolos Bolos - une vie on ne peut moins orthodoxographique. Un jour pourtant, une petite ligne de Bolo Bolo du nom de Lorem Ipsum décida de s'aventurer dans la vaste Grammaire. Le grand Oxymore voulut l'en dissuader, le prevenant que là-bas cela fourmillait de vils Virgulos, de sauvages Pointdexclamators et de sournois Semicolons qui l'attendraient pour sûr au prochain paragraphe, mais ces mots ne firent écho dans l'oreille du petit Bolo qui ne se laissa point déconcerter. Il pacqua ses 12 lettrines, glissa son initiale dans sa panse et se mit en route. Alors qu'il avait gravi les premiers flancs de la chaîne des monts Italiques, il jeta un dernier regard sur la skyline de </p>
+</div>
+
+<div id="parcours" class="tabcontent">
+  <h3>Parcours</h3>
+  <p>mon Cursus scolaire et professionnel</p> 
+</div>
+
+<div id="activity" class="tabcontent">
+  <h3>Activité</h3>
+  <p>Mon actualité</p>
+</div>
+</div>
+    <div class="corp">
+    
+        <button type="button" class="buttoncircle"><a href="#"><p class="incline">Twitter</p></a></button>
+            <button type="button" class="buttoncircle"><a href="#"><p class="incline">Isnta</p></a></button>
+            <button type="button" class="buttoncircle"><a href="#"><p class="incline">LinkedIn</p></a></button>
+
+
+    </div>
+    <footer class="piedpage">
+        <p align="center"><strong>Copyright Shaku 2018</strong></p>
+    
+    </footer>
+    <script>
+function openTab(evt,tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+        document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html>

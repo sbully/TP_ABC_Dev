@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="Car Game" Height="450" Width="600.696" ResizeMode="NoResize" Closed="Demarrage_Closed">
     <Grid x:Name="GrilleDemarrage" HorizontalAlignment="Left" Height="410" Margin="10,10,0,0" VerticalAlignment="Top" Width="581">
-        <Image x:Name="VoitureRouge" HorizontalAlignment="Left" Height="189" Margin="40,182,0,0" VerticalAlignment="Top" Width="135" MouseLeftButtonDown="VoitureRouge_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5" />
-        <Image x:Name="VoitureBleu" HorizontalAlignment="Left" Height="189" Margin="229,182,0,0" VerticalAlignment="Top" Width="135" MouseLeftButtonDown="VoitureBleu_MouseLeftButtonDown"/>
-        <Image x:Name="VoitureJaune" HorizontalAlignment="Left" Height="189" Margin="409,182,0,0" VerticalAlignment="Top" Width="135" MouseLeftButtonDown="VoitureJaune_MouseLeftButtonDown"/>
-        <Label x:Name="LabelChoix" Content="Choisissez votre voiture :" HorizontalAlignment="Left" Height="95" Margin="71,31,0,0" VerticalAlignment="Top" Width="467" FontSize="39"/>
+        <Image x:Name="VoitureRouge" HorizontalAlignment="Left" Height="189" Margin="40,182,0,0" VerticalAlignment="Top" Width="135" MouseLeftButtonDown="Voiture_MouseLeftButton" RenderTransformOrigin="0.5,0.5" />
+        <Image x:Name="VoitureBleu" HorizontalAlignment="Left" Height="189" Margin="229,182,0,0" VerticalAlignment="Top" Width="135" MouseLeftButtonDown="Voiture_MouseLeftButton"/>
+        <Image x:Name="VoitureJaune" HorizontalAlignment="Left" Height="189" Margin="409,182,0,0" VerticalAlignment="Top" Width="135" MouseLeftButtonDown="Voiture_MouseLeftButton"/>
+        <Label x:Name="LabelChoix" Content="Choisissez votre voiture :" Margin="164,122,164,246" FontSize="22"/>
+        <TextBox x:Name="Nom_joueur" HorizontalAlignment="Left" Height="46" Margin="164,71,0,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" Width="253" FontSize="22"/>
+        <Label Content="Nom du joueur :" HorizontalAlignment="Left" Height="47" Margin="164,19,0,0" VerticalAlignment="Top" Width="253" FontSize="24"/>
     </Grid>
 </Window>

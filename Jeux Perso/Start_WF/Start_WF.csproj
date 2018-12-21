@@ -57,6 +57,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="alphabetique.cs" />
+    <Compile Include="AppDataManager.cs" />
     <Compile Include="Canon.cs" />
     <Compile Include="Invader.cs" />
     <Compile Include="JoueurScore.cs" />

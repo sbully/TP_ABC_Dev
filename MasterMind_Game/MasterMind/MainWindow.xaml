@@ -1,0 +1,18 @@
+﻿<Window x:Name="FenetreDemarrage" x:Class="MasterMind.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MasterMind"
+        mc:Ignorable="d"
+        Title="Mastermind" Height="700" Width="800" ResizeMode="NoResize" Foreground="{x:Null}" Loaded="FenetreDemarrage_Loaded">
+    <Grid x:Name="Grille1" Margin="0,0,-6,0" Height="663" VerticalAlignment="Bottom" Width="794">
+        <Image x:Name="ImageFond" HorizontalAlignment="Left" Margin="0,-10,-6,0" Width="796" Height="670" VerticalAlignment="Top"/>
+        <Button x:Name="Button_MasterMind" Content="Mastermind" HorizontalAlignment="Left" Height="72" Margin="142,452,0,0" VerticalAlignment="Top" Width="199" FontSize="22" Click="Button_MasterMind_Click"/>
+        <Button x:Name="Button_High_Score" Content="High Score" HorizontalAlignment="Left" Height="72" Margin="456,452,0,0" VerticalAlignment="Top" Width="199" FontSize="22"/>
+        <TextBox x:Name="TextBox_Name" Height="60" Margin="228,338,228,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Label x:Name="LabelName" Content="Nom du joueur :" HorizontalAlignment="Left" Height="54" Margin="228,279,0,0" VerticalAlignment="Top" Width="338" FontSize="22"/>
+        <local:ButtonCircle Content="ButtonCircle" HorizontalAlignment="Left" Margin="67,53,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
